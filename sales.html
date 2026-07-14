@@ -134,6 +134,7 @@
       height: 56px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     .wordmark {
@@ -143,6 +144,73 @@
       text-transform: uppercase;
       color: #111;
       text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-trigger {
+      font-size: 13px;
+      font-weight: 500;
+      color: #444;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: color 0.15s ease;
+    }
+
+    .nav-item:hover .nav-trigger,
+    .nav-item:focus-within .nav-trigger {
+      color: #111;
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+      z-index: 200;
+    }
+
+    .nav-item:hover .nav-dropdown,
+    .nav-item:focus-within .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown-link {
+      display: block;
+      padding: 12px 20px;
+      font-size: 14px;
+      color: #555;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+
+    .nav-dropdown-link:last-child { border-bottom: none; }
+
+    .nav-dropdown-link:hover,
+    .nav-dropdown-link:focus-visible {
+      background: #f8f8f8;
+      color: #111;
     }
 
 
@@ -1154,6 +1222,22 @@
   <!-- Nav -->
   <nav>
     <a href="/" class="wordmark">Augusto</a>
+    <div class="nav-menu">
+      <div class="nav-item" tabindex="0">
+        <span class="nav-trigger">Solutions</span>
+        <div class="nav-dropdown">
+          <a href="company-intelligence.html" class="nav-dropdown-link">Company Intelligence</a>
+          <a href="finance.html" class="nav-dropdown-link">Finance</a>
+          <a href="sales.html" class="nav-dropdown-link">Sales</a>
+          <a href="marketing.html" class="nav-dropdown-link">Marketing</a>
+          <a href="hr.html" class="nav-dropdown-link">HR</a>
+          <a href="operations.html" class="nav-dropdown-link">Operations</a>
+          <a href="engineering.html" class="nav-dropdown-link">Engineering</a>
+          <a href="it.html" class="nav-dropdown-link">IT</a>
+          <a href="security.html" class="nav-dropdown-link">Security</a>
+        </div>
+      </div>
+    </div>
   </nav>
 
 
