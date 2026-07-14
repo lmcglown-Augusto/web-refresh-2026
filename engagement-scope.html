@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where Does AI Go First? | Augusto Intelligence</title>
+  <meta name="description" content="Augusto builds AI Intelligence systems across eight business functions. Two questions determine what your engagement looks like. Find out where your organization stands.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 80px 48px 100px;
+    }
+
+    /* ── Header ── */
+    .header-intro {
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .wordmark {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 56px;
+      display: block;
+    }
+
+    .header-block {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .header-block h1 {
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .header-block .sub {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    .context-note {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-left: 2px solid #111;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    .context-note strong {
+      color: #444;
+      font-weight: 500;
+    }
+
+    /* ── Mode Cards ── */
+    .modes-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+
+    .modes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #ddd;
+      border: 1px solid #ddd;
+      margin-bottom: 56px;
+    }
+
+    .mode {
+      background: #fff;
+      padding: 32px;
+    }
+
+    .mode-tag {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    .mode-name {
+      font-size: 22px;
+      font-weight: 500;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    .mode-gap {
+      font-size: 13px;
+      font-weight: 500;
+      color: #999;
+      margin-bottom: 14px;
+    }
+
+    .mode-def {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .mode-receives {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .mode-item {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .mode-item::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 0 0 48px;
+    }
+
+    /* ── Domain selector ── */
+    .step-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aaa;
+      margin-bottom: 14px;
+    }
+
+    .domains {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 48px;
+    }
+
+    .domain-btn {
+      font-size: 13px;
+      font-family: inherit;
+      padding: 8px 18px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #666;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: border-color 0.1s, color 0.1s, background 0.1s;
+    }
+
+    .domain-btn:hover {
+      border-color: #888;
+      color: #111;
+    }
+
+    .domain-btn.active {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    /* ── Questions ── */
+    .questions {
+      margin-bottom: 48px;
+    }
+
+    .q-block {
+      margin-bottom: 36px;
+    }
+
+    .q-number {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .q-text {
+      font-size: 17px;
+      color: #111;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .q-options {
+      display: flex;
+      gap: 8px;
+    }
+
+    .q-btn {
+      flex: 1;
+      padding: 13px 16px;
+      font-size: 13px;
+      font-family: inherit;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #666;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.1s;
+      line-height: 1.4;
+    }
+
+    .q-btn:hover {
+      border-color: #888;
+      color: #111;
+    }
+
+    .q-btn.sel-yes {
+      background: #111;
+      border-color: #111;
+      color: #fff;
+    }
+
+    .q-btn.sel-no {
+      background: #555;
+      border-color: #555;
+      color: #fff;
+    }
+
+    /* ── Result ── */
+    .result {
+      display: none;
+      border: 1px solid #111;
+      padding: 36px;
+      margin-bottom: 16px;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .result-name {
+      font-size: 28px;
+      font-weight: 500;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .result-why {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.75;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .result-delivers-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #bbb;
+      margin-bottom: 12px;
+    }
+
+    .result-item {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.55;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 7px;
+    }
+
+    .result-item::before {
+      content: '-';
+      position: absolute;
+      left: 0;
+      color: #bbb;
+    }
+
+    .result-next {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    .result-next strong {
+      color: #111;
+      font-weight: 500;
+    }
+
+    /* ── Reset ── */
+    .reset-btn {
+      display: none;
+      font-size: 12px;
+      font-family: inherit;
+      color: #aaa;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+      margin-bottom: 64px;
+    }
+
+    .reset-btn.show {
+      display: inline-block;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding-top: 32px;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: #bbb;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-right {
+      font-size: 12px;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    /* ── Company Intelligence foundation ── */
+    .ci-foundation {
+      border: 1.5px solid #111;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .ci-foundation-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .ci-foundation-tag {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aaa;
+    }
+
+    .ci-foundation-badge {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      border: 1px solid #111;
+      padding: 2px 8px;
+      color: #111;
+    }
+
+    .ci-foundation-name {
+      font-size: 22px;
+      font-weight: 500;
+      color: #111;
+      margin: 0 0 12px;
+    }
+
+    .ci-foundation-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 0 20px;
+    }
+
+    .ci-foundation-pain {
+      font-size: 13px;
+      color: #888;
+      font-style: italic;
+      padding-left: 16px;
+      border-left: 2px solid #ddd;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Domain pain display ── */
+    .domain-pain-display {
+      margin-bottom: 48px;
+      padding: 16px 20px;
+      border-left: 2px solid #111;
+    }
+
+    .domain-pain-display p {
+      font-size: 15px;
+      color: #444;
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── CTA button ── */
+    .result-cta-btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 32px;
+      background: #111;
+      color: #fff;
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border: 1px solid #111;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .result-cta-btn:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .page { padding: 48px 24px 72px; }
+      .header-block h1 { font-size: 30px; }
+      .modes { grid-template-columns: 1fr; }
+      .q-options { flex-direction: column; }
+      .ci-foundation { padding: 20px; }
+      .ci-foundation-header { flex-direction: column; gap: 8px; }
+      .result { padding: 24px; }
+      .result-cta-btn { display: block; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+    <span class="wordmark">Augusto</span>
+
+    <div class="header-block">
+      <p class="header-intro">Augusto builds AI Intelligence systems across eight business functions. Before a proposal is written, two questions determine what your engagement looks like.</p>
+      <h1>Define your engagement.</h1>
+      <p class="sub">Every Intelligence offering comes in two forms: Guidance, which closes the knowledge gap, and Execution, which closes the capacity gap. Select a domain, answer honestly, and walk away with a clear scope for your relationship with Augusto.</p>
+      <div class="context-note">
+        <strong>Already spoken with us?</strong> Use this to align on scope before your next conversation, so time is spent on the work, not the setup.
+      </div>
+    </div>
+
+    <!-- Mode definitions -->
+    <p class="modes-label">The two engagement modes</p>
+    <div class="modes">
+      <div class="mode">
+        <p class="mode-tag">Mode A</p>
+        <p class="mode-name">Guidance</p>
+        <p class="mode-gap">Closes the knowledge gap</p>
+        <p class="mode-def">Augusto designs the intelligence system: architecture, prioritization, and implementation logic. Your team owns the execution.</p>
+        <p class="mode-receives">Your team receives</p>
+        <p class="mode-item">System architecture and design rationale</p>
+        <p class="mode-item">Use case prioritization and sequencing</p>
+        <p class="mode-item">Implementation playbook</p>
+        <p class="mode-item">Enablement to build, maintain, and extend</p>
+      </div>
+      <div class="mode">
+        <p class="mode-tag">Mode B</p>
+        <p class="mode-name">Execution</p>
+        <p class="mode-gap">Closes the capacity gap</p>
+        <p class="mode-def">Augusto builds, deploys, and activates the intelligence system on your behalf. You receive a running system with documentation and a clear path for internal maintenance.</p>
+        <p class="mode-receives">Your team receives</p>
+        <p class="mode-item">Fully deployed intelligence system</p>
+        <p class="mode-item">Integrated agents and automated workflows</p>
+        <p class="mode-item">Complete system documentation</p>
+        <p class="mode-item">Handoff with operating guide and support path</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Company Intelligence foundation -->
+    <div class="ci-foundation">
+      <p class="ci-foundation-pain">"Is critical knowledge walking out the door every time someone leaves? Is the institutional memory your company depends on locked inside people instead of available to everyone who needs it?"</p>
+      <p class="ci-foundation-name">Company Intelligence</p>
+      <p class="ci-foundation-desc">Company Intelligence captures what your organization knows and makes it available to every employee. Decisions made, lessons earned, expertise developed. All of it searchable, accessible, and no longer dependent on any one person being in the room.</p>
+      <p class="ci-foundation-desc" style="margin-top: 12px;">It also sits beneath every function-level activation. When your Finance team builds a forecasting model or your Sales team develops a new approach, Company Intelligence is what ensures those insights don't stay siloed. Every domain investment becomes more durable when Company Intelligence is part of the engagement.</p>
+      <div class="ci-foundation-header" style="margin-top: 20px;">
+        <span class="ci-foundation-tag">Foundation layer</span>
+        <span class="ci-foundation-badge">The Foundation that integrates all Intelligence Work</span>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Domain selector -->
+    <p class="step-label">Step 1: Select your function domain</p>
+    <div class="domains" id="domainRow">
+      <button class="domain-btn active" data-domain="Finance" data-pain="Is finance a reporting bottleneck, when it should be a strategic asset?">Finance</button>
+      <button class="domain-btn" data-domain="Sales" data-pain="Is your sales team drowning in the work that surrounds selling, instead of closing?">Sales</button>
+      <button class="domain-btn" data-domain="Marketing" data-pain="Are you hoping the numbers eventually show marketing is working?">Marketing</button>
+      <button class="domain-btn" data-domain="HR" data-pain="Is your workforce organized around yesterday, instead of designed for tomorrow?">HR</button>
+      <button class="domain-btn" data-domain="Operations" data-pain="Is your operation a cost you have learned to live with, instead of a competitive advantage?">Operations</button>
+      <button class="domain-btn" data-domain="Engineering" data-pain="Is your engineering team rebuilding context from scratch, instead of compounding on what they already know?">Engineering</button>
+      <button class="domain-btn" data-domain="IT" data-pain="Is IT keeping up with the business, instead of driving it forward?">IT</button>
+      <button class="domain-btn" data-domain="Security" data-pain="Is your security posture a risk you have learned to live with, instead of a solved problem?">Security</button>
+    </div>
+    <div class="domain-pain-display" id="domainPain">
+      <p id="domainPainText">"Is finance a reporting bottleneck, when it should be a strategic asset?"</p>
+    </div>
+
+    <!-- Questions -->
+    <p class="step-label">Step 2: Answer honestly</p>
+    <div class="questions">
+
+      <div class="q-block">
+        <p class="q-number">Question 01: Capability</p>
+        <p class="q-text" id="q1text">"Does your finance team have the technical capability to design AI-driven reporting, forecasting, and analysis systems without outside help?"</p>
+        <div class="q-options">
+          <button class="q-btn" id="q1yes" onclick="answer(1,'yes')">Yes, we have the capability</button>
+          <button class="q-btn" id="q1no" onclick="answer(1,'no')">No, we need that expertise</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <p class="q-number">Question 02: Capacity</p>
+        <p class="q-text" id="q2text">"Does your finance team have the bandwidth to build and integrate these systems alongside current reporting responsibilities?"</p>
+        <div class="q-options">
+          <button class="q-btn" id="q2yes" onclick="answer(2,'yes')">Yes, we have the bandwidth</button>
+          <button class="q-btn" id="q2no" onclick="answer(2,'no')">No, we are at capacity</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Result -->
+    <div class="result" id="result">
+      <p class="result-eyebrow">Recommended engagement</p>
+      <p class="result-name" id="result-name"></p>
+      <p class="result-why" id="result-why"></p>
+      <p class="result-delivers-label">What this engagement delivers</p>
+      <div id="result-items"></div>
+      <div class="result-next" id="result-next"></div>
+      <a href="/contact" class="result-cta-btn" id="result-cta">Start the conversation</a>
+    </div>
+
+    <button class="reset-btn" id="resetBtn" onclick="resetAll()">Clear and start over</button>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-left">augusto.digital</span>
+      <span class="footer-right">Put AI to work for your people.</span>
+    </div>
+
+  </div>
+
+  <script>
+    const q1Map = {
+      Finance:     "Does your finance team have the technical capability to design AI-driven reporting, forecasting, and analysis systems without outside help?",
+      Sales:       "Does your sales operations team have the capability to design AI agents and intelligence workflows across your sales motion without outside help?",
+      Marketing:   "Does your marketing team have the technical capability to design AI-driven attribution, content, and campaign intelligence systems without outside help?",
+      HR:          "Does your HR team have the capability to design AI-powered workforce intelligence systems without outside help?",
+      Operations:  "Does your operations team have the technical capability to design AI-driven process automation and operational intelligence without outside help?",
+      Engineering: "Does your engineering team have the AI expertise to design intelligence systems into your product or infrastructure without outside help?",
+      IT:          "Does your IT team have the AI architecture expertise to design an intelligence layer across your infrastructure without outside help?",
+      Security:    "Does your security team have the expertise to design an AI-integrated security intelligence system without outside help?"
+    };
+
+    const q2Map = {
+      Finance:     "Does your finance team have the bandwidth to build and integrate these systems alongside current reporting responsibilities?",
+      Sales:       "Does your sales team have the bandwidth to build and operate this alongside current revenue targets and pipeline pressure?",
+      Marketing:   "Does your marketing team have the bandwidth to build this while managing active campaigns, reporting cycles, and content demands?",
+      HR:          "Does your HR team have the bandwidth to prioritize and implement this in the next 60–90 days alongside current people operations?",
+      Operations:  "Does your operations team have the bandwidth to execute this build alongside current operational demands and team commitments?",
+      Engineering: "Does your engineering team have the bandwidth to prioritize this alongside your current product roadmap and sprint commitments?",
+      IT:          "Does your IT team have the bandwidth for this build given your current support load, infrastructure demands, and ongoing projects?",
+      Security:    "Does your security team have the bandwidth to execute this build without pulling resources away from active risk coverage and incident response?"
+    };
+
+    const outcomes = {
+      guidance: {
+        name: "Guidance",
+        why: (d) => `Your team has the expertise and the time. Augusto's role is to accelerate and de-risk by defining the right architecture for your ${d} Intelligence system, sequencing where to activate first, and handing your team the playbook to build and maintain it. You own the execution. Augusto ensures you're building the right thing.`,
+        items: (d) => [
+          `${d} Intelligence system architecture and design rationale`,
+          "Use case prioritization and activation sequence",
+          "Implementation playbook your team can execute against",
+          "Enablement so your team can build, maintain, and extend"
+        ],
+        next: "<strong>Next step: scope a Guidance engagement.</strong> Typically delivered over 4–8 weeks. The output is a complete blueprint. Your team executes with confidence. Add Company Intelligence to ensure what your team builds and learns is captured and available across the organization."
+      },
+      execution: {
+        name: "Execution",
+        why: (d) => `Your team has the expertise to evaluate and direct the work, but not the bandwidth to build it. Augusto builds your ${d} Intelligence system: designed, deployed, integrated, and handed off running. Your team maintains it from there.`,
+        items: (d) => [
+          `Fully deployed ${d} Intelligence system`,
+          "Integrated agents and automated workflows",
+          "Complete system documentation and operating guide",
+          "Defined handoff with path for internal maintenance and extension"
+        ],
+        next: "<strong>Next step: scope an Execution engagement.</strong> Scoped based on domain complexity and depth of integration. Delivery typically runs 8–16 weeks from kickoff. Add Company Intelligence to ensure the system Augusto builds feeds institutional knowledge back into the whole organization."
+      },
+      both: {
+        name: "Guidance + Execution",
+        why: (d) => `Your team needs both the design knowledge and the hands to build it. Augusto does both: architecting and building your ${d} Intelligence system. Guidance is embedded throughout the build so your team understands what was created, why, and how to extend it. This is the path that delivers the system and builds internal capability at the same time.`,
+        items: (d) => [
+          "Architecture and design rationale embedded in every build decision",
+          `Full ${d} Intelligence system deployment and integration`,
+          "Team training on operation, maintenance, and expansion",
+          "Handoff structured for long-term internal ownership"
+        ],
+        next: "<strong>Next step: scope a combined engagement.</strong> This is the most common path for mid-market organizations activating AI in a new domain for the first time. We begin with a focused discovery sprint to size the full scope. Company Intelligence is typically scoped alongside this engagement. It is the layer that makes the investment durable."
+      }
+    };
+
+    let state = { q1: null, q2: null, domain: "Finance" };
+
+    document.querySelectorAll('#domainRow .domain-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#domainRow .domain-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.domain = btn.dataset.domain;
+        document.getElementById('q1text').textContent = '”' + q1Map[state.domain] + '”';
+        document.getElementById('q2text').textContent = '”' + q2Map[state.domain] + '”';
+        document.getElementById('domainPainText').textContent = '”' + btn.dataset.pain + '”';
+        resetAll();
+      });
+    });
+
+    function answer(q, val) {
+      state['q' + q] = val;
+      const yes = document.getElementById('q' + q + 'yes');
+      const no  = document.getElementById('q' + q + 'no');
+      yes.className = 'q-btn' + (val === 'yes' ? ' sel-yes' : '');
+      no.className  = 'q-btn' + (val === 'no'  ? ' sel-no'  : '');
+      if (state.q1 && state.q2) showResult();
+    }
+
+    function showResult() {
+      let type;
+      if      (state.q1 === 'yes' && state.q2 === 'yes') type = 'guidance';
+      else if (state.q1 === 'yes' && state.q2 === 'no')  type = 'execution';
+      else                                                type = 'both';
+
+      const r = outcomes[type];
+      const d = state.domain;
+
+      document.getElementById('result-name').textContent = r.name;
+      document.getElementById('result-why').textContent  = r.why(d);
+      document.getElementById('result-items').innerHTML  = r.items(d).map(i => `<p class="result-item">${i}</p>`).join('');
+      document.getElementById('result-next').innerHTML   = r.next;
+
+      document.getElementById('result').classList.add('show');
+      document.getElementById('resetBtn').classList.add('show');
+      document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function resetAll() {
+      state.q1 = null;
+      state.q2 = null;
+      ['q1yes','q1no','q2yes','q2no'].forEach(id => document.getElementById(id).className = 'q-btn');
+      document.getElementById('result').classList.remove('show');
+      document.getElementById('resetBtn').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
