@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Intelligence | Augusto</title>
+  <meta name="description" content="Your AI chat prompt is just step 1. Sales Intelligence activates the revenue layer your sales team is missing, so every forecast reflects deals that are actually moving, not whatever got logged.">
+  <style>
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Base ── */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: #fff;
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .bg-light { background: #f8f8f8; }
+
+    /* ── Typography ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #aaa;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .anchor {
+      font-size: clamp(36px, 5.5vw, 60px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #111;
+      margin-bottom: 28px;
+    }
+
+    .anchor-md {
+      font-size: clamp(26px, 3.8vw, 40px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #111;
+      margin-bottom: 24px;
+    }
+
+    .body-text {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    .body-text + .body-text {
+      margin-top: 16px;
+    }
+
+    .slide-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #111;
+      margin: 18px 0 0;
+    }
+
+    .slide-cta span {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #111;
+      color: #fff;
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      border: 1.5px solid #111;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .btn-ghost:hover {
+      background: #fff;
+      color: #111;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      z-index: 100;
+      padding: 0 48px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+    }
+
+    .wordmark {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+    }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 1 — HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      background: #111;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0;
+    }
+
+    #hero .section-label  { color: #444; }
+    #hero .anchor         { color: #fff; font-size: clamp(48px, 8vw, 80px); letter-spacing: -0.03em; }
+    #hero .body-text      { color: #888; max-width: 500px; font-size: 18px; margin-bottom: 40px; }
+
+    #hero .hero-diagnose {
+      font-size: 15px;
+      color: #999;
+      margin-bottom: 20px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    #hero .hero-subhead {
+      color: #888;
+      max-width: 520px;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-top: 8px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .hero-form {
+      display: flex;
+      gap: 10px;
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .hero-email-input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 16px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .hero-email-input::placeholder { color: #777; }
+    .hero-email-input:focus { outline: none; border-color: #fff; }
+
+    .btn-hero-primary {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #fff;
+      color: #111;
+      font-size: 14px;
+      font-family: inherit;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border: 1.5px solid #fff;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn-hero-primary:hover { background: transparent; color: #fff; }
+
+    .hero-secondary-link {
+      font-size: 14px;
+      color: #999;
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+
+    .hero-secondary-link:hover { color: #fff; }
+
+    .hero-trust-line {
+      font-size: 13px;
+      color: #777;
+      margin-top: 22px;
+      letter-spacing: 0.01em;
+    }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 2 — DIAGNOSE
+    ═══════════════════════════════════════ */
+    .symptoms {
+      list-style: none;
+      margin: 32px 0;
+    }
+
+    .symptoms li {
+      font-size: 16px;
+      color: #444;
+      padding: 16px 0 16px 28px;
+      border-bottom: 1px solid #e8e8e8;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .symptoms li:first-child { border-top: 1px solid #e8e8e8; }
+
+    .symptoms li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #111;
+      border-radius: 50%;
+    }
+
+    .closer-line {
+      font-size: 17px;
+      color: #111;
+      font-style: italic;
+      margin-top: 32px;
+    }
+
+    /* ── Scenario block ── */
+    .scenario-block {
+      margin: 28px 0 44px;
+      padding: 20px 24px;
+      border-left: 2px solid #111;
+      max-width: 620px;
+    }
+
+    .scenario-block .scenario-text {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.75;
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* ── Diagnose chain ── */
+    .chain { max-width: 620px; margin: 0 0 8px; }
+
+    .chain-sequence {
+      position: relative;
+      padding-left: 24px;
+      border-left: 1px solid #ddd;
+    }
+
+    .chain-step {
+      position: relative;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.65;
+      margin: 0;
+      padding: 0 0 26px 0;
+    }
+
+    .chain-sequence .chain-step::before {
+      content: '';
+      position: absolute;
+      left: -29px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #bbb;
+    }
+
+    .chain-conclusion {
+      margin-top: 6px;
+      padding: 26px 28px;
+      border: 1.5px solid #111;
+    }
+
+    .chain-conclusion .chain-step {
+      font-size: 19px;
+      font-weight: 500;
+      color: #111;
+      line-height: 1.5;
+      padding-bottom: 0;
+    }
+
+    /* ── Scroll reveal (progressive enhancement — no-JS/reduced-motion fall back to fully visible) ── */
+    .js .chain-step {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .js .chain-step.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .chain-step { transition: none !important; opacity: 1 !important; transform: none !important; }
+    }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 3 — EVIDENCE + CALCULATOR
+    ═══════════════════════════════════════ */
+    .calc-wrapper {
+      border: 1px solid #ddd;
+      padding: 40px 40px 32px;
+      margin: 40px 0;
+      background: #fff;
+    }
+
+    .calc-header {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .calc-employee-display {
+      font-size: 56px;
+      font-weight: 400;
+      color: #111;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .calc-employee-label {
+      font-size: 16px;
+      color: #888;
+      padding-bottom: 10px;
+    }
+
+    .calc-slider-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    .calc-range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #ccc;
+      margin-top: 6px;
+      margin-bottom: 14px;
+    }
+
+    .calc-tier {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #111;
+      border: 1px solid #111;
+      padding: 6px 12px;
+      margin: 0 0 26px;
+    }
+
+    .calc-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 2px;
+      background: #ddd;
+      outline: none;
+      cursor: pointer;
+      display: block;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      background: #111;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .calc-slider::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      background: #111;
+      cursor: pointer;
+      border-radius: 50%;
+      border: none;
+    }
+
+    .calc-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #e8e8e8;
+      border: 1px solid #e8e8e8;
+    }
+
+    .calc-stat {
+      background: #fff;
+      padding: 28px 24px;
+    }
+
+    .calc-stat-number {
+      font-size: 38px;
+      font-weight: 400;
+      color: #111;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .calc-stat-label {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .calc-source {
+      font-size: 11px;
+      color: #ccc;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 4 — THE SHIFT
+    ═══════════════════════════════════════ */
+    .shift-grid {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin: 40px 0 48px;
+      align-items: start;
+    }
+
+    .shift-col-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+
+    .shift-item {
+      font-size: 15px;
+      color: #555;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8e8e8;
+      line-height: 1.5;
+    }
+
+    .shift-item:first-of-type { border-top: 1px solid #e8e8e8; }
+
+    .shift-arrow-col {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 52px;
+    }
+
+    .shift-arrow-col span {
+      font-size: 20px;
+      color: #ccc;
+      line-height: 1;
+    }
+
+    .yields-label {
+      font-size: 15px;
+      font-weight: 500;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .yields {
+      list-style: none;
+    }
+
+    .yields li {
+      font-size: 16px;
+      color: #444;
+      padding: 14px 0 14px 28px;
+      border-bottom: 1px solid #e8e8e8;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .yields li:first-child { border-top: 1px solid #e8e8e8; }
+
+    /* ── Mid-page CTA (Shift section) ── */
+    .shift-cta {
+      margin-top: 40px;
+      padding: 32px;
+      border: 1.5px solid #111;
+      max-width: 620px;
+    }
+
+    .shift-cta-headline {
+      font-size: 22px;
+      font-weight: 500;
+      color: #111;
+      margin: 0 0 10px;
+    }
+
+    .shift-cta-sub {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0 0 24px;
+      max-width: 480px;
+    }
+
+    .shift-cta-form {
+      display: flex;
+      gap: 10px;
+      max-width: 460px;
+      flex-wrap: wrap;
+    }
+
+    .shift-cta-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 16px;
+      background: #fff;
+      border: 1px solid #ccc;
+      color: #111;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .shift-cta-input::placeholder { color: #999; }
+    .shift-cta-input:focus { outline: none; border-color: #111; }
+
+    .yields li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: #111;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 5 — WHAT SALES INTELLIGENCE DOES
+    ═══════════════════════════════════════ */
+    .def-block {
+      padding: 28px 32px;
+      border: 1px solid #e8e8e8;
+      margin: 32px 0 40px;
+      max-width: 720px;
+    }
+
+    .def-block p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #e8e8e8;
+      border: 1px solid #e8e8e8;
+    }
+
+    .capability {
+      position: relative;
+      background: #fff;
+      padding: 32px 28px 44px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .capability:hover,
+    .capability:focus-within {
+      background: #fafafa;
+    }
+
+    .capability-hint {
+      position: absolute;
+      right: 20px;
+      bottom: 16px;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #bbb;
+      transition: opacity 0.15s;
+    }
+
+    .capability:hover .capability-hint,
+    .capability:focus-within .capability-hint {
+      opacity: 0;
+    }
+
+    .capability-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 12px;
+    }
+
+    .capability-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    .capability-flip {
+      position: relative;
+      min-height: 110px;
+    }
+
+    .capability-flip .capability-desc,
+    .capability-problem {
+      transition: opacity 0.2s ease;
+    }
+
+    .capability-problem {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.65;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .capability-problem-tag {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #999;
+      margin-bottom: 6px;
+    }
+
+    .capability:hover .capability-flip .capability-desc,
+    .capability:focus-within .capability-flip .capability-desc {
+      opacity: 0;
+    }
+
+    .capability:hover .capability-problem,
+    .capability:focus-within .capability-problem {
+      opacity: 1;
+    }
+
+    .capability { outline: none; }
+    .capability:focus-visible { box-shadow: 0 0 0 2px #111 inset; }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 6 — DOMAIN GRID
+    ═══════════════════════════════════════ */
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #e8e8e8;
+      border: 1px solid #e8e8e8;
+    }
+
+    .domain-tile {
+      display: block;
+      background: #fff;
+      padding: 22px 20px;
+      text-decoration: none;
+      position: relative;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .domain-tile-num {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #ddd;
+      margin-bottom: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .domain-tile-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .domain-tile-outcome {
+      font-size: 12px;
+      color: #999;
+      line-height: 1.5;
+      transition: color 0.2s ease;
+    }
+
+    .domain-tile.is-elevated {
+      background: #111;
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+      z-index: 2;
+    }
+
+    .domain-tile.is-elevated .domain-tile-num { color: #666; }
+    .domain-tile.is-elevated .domain-tile-name { color: #fff; }
+    .domain-tile.is-elevated .domain-tile-outcome { color: #bbb; }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 7 — PROVOCATIVE QUESTION
+    ═══════════════════════════════════════ */
+    .checklist-intro {
+      font-size: 17px;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .checkbox-list {
+      list-style: none;
+      max-width: 700px;
+    }
+
+    .checkbox-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .checkbox-list li:first-child { border-top: 1px solid #e8e8e8; }
+
+    .checkbox-list input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      cursor: pointer;
+      flex-shrink: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      background: #fff;
+      border: 1.5px solid #ccc;
+      position: relative;
+      transition: background 0.1s, border-color 0.1s;
+    }
+
+    .checkbox-list input[type="checkbox"]:checked {
+      background: #111;
+      border-color: #111;
+    }
+
+    .checkbox-list input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 6px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+
+    .checkbox-list label {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .checkbox-feedback {
+      margin-top: 32px;
+      padding: 24px 28px;
+      border: 1px solid #111;
+      max-width: 700px;
+    }
+
+    .checkbox-feedback p {
+      font-size: 16px;
+      color: #111;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* ── Forced choice (Provocative Question) ── */
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 32px 0;
+      max-width: 720px;
+    }
+
+    .choice-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 28px 52px 28px 24px;
+      background: #fff;
+      border: 1.5px solid #ccc;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: border-color 0.15s, background 0.15s, transform 0.15s;
+    }
+
+    .choice-card:hover {
+      border-color: #111;
+      transform: translateY(-2px);
+    }
+
+    .choice-card.is-active { border-color: #111; background: #111; }
+    .choice-card.is-active .choice-tag { color: #777; }
+    .choice-card.is-active .choice-text { color: #fff; }
+    .choice-card.is-active .choice-arrow { color: #fff; }
+
+    .choice-arrow {
+      position: absolute;
+      right: 20px;
+      bottom: 22px;
+      font-size: 18px;
+      color: #bbb;
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    .choice-card:hover .choice-arrow {
+      color: #111;
+      transform: translateX(4px);
+    }
+
+    .choice-tag {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aaa;
+    }
+
+    .choice-text {
+      font-size: 18px;
+      font-weight: 500;
+      color: #111;
+      line-height: 1.4;
+    }
+
+    .choice-response {
+      display: none;
+      padding: 28px 32px;
+      border: 1.5px solid #111;
+      max-width: 620px;
+    }
+
+    .choice-response.show { display: block; }
+
+    .choice-response p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .choice-response-cta { margin-top: 20px; }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 8 — CREDIBILITY
+    ═══════════════════════════════════════ */
+    #credibility {
+      background: #111;
+    }
+
+    #credibility .section-label  { color: #444; }
+    #credibility .anchor-md      { color: #fff; }
+    #credibility .body-text      { color: #777; max-width: 600px; }
+    #credibility .tagline        { font-size: 16px; color: #555; font-style: italic; margin-top: 24px; }
+
+    .video-frame {
+      max-width: 640px;
+      margin: 28px 0 0;
+    }
+
+    .video-frame-inner {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1c1c1c;
+      border: 1.5px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-play {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1.5px solid #fff;
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 4px;
+    }
+
+    .video-caption {
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+
+    /* ═══════════════════════════════════════
+       SECTION 9 — ENGAGEMENT
+    ═══════════════════════════════════════ */
+    .engagement-intro {
+      font-size: 17px;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .engagement-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 32px 0 32px;
+    }
+
+    .engagement-meta-item {
+      border-top: 2px solid #111;
+      padding-top: 16px;
+    }
+
+    .rumble-tiers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 28px 0 40px;
+    }
+
+    .rumble-tier {
+      border: 1.5px solid #ccc;
+      padding: 24px 28px;
+    }
+
+    .rumble-tier.is-recommended {
+      border-color: #111;
+    }
+
+    .rumble-tier-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #111;
+      border: 1px solid #111;
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+
+    .rumble-tier-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 6px;
+    }
+
+    .rumble-tier-price {
+      font-size: 24px;
+      font-weight: 400;
+      color: #111;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .rumble-tier-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .usecase-card {
+      border: 1.5px solid #111;
+      padding: 28px 32px;
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+
+    .usecase-tag {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #aaa;
+      margin: 0 0 10px;
+    }
+
+    .usecase-client {
+      font-size: 20px;
+      font-weight: 500;
+      color: #111;
+      margin: 0 0 10px;
+    }
+
+    .usecase-challenge {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+
+    .engagement-meta-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .engagement-meta-value {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #e8e8e8;
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left  { font-size: 12px; color: #bbb; letter-spacing: 0.06em; }
+    .footer-right { font-size: 12px; color: #ccc; font-style: italic; }
+
+    /* ── Page close ── */
+    .page-close-frame {
+      border: 1.5px solid #111;
+      padding: 56px 40px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .page-close-headline {
+      font-size: 32px;
+      font-weight: 400;
+      color: #111;
+      line-height: 1.3;
+      margin: 0 0 28px;
+    }
+
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .container    { padding: 0 24px; }
+      section       { padding: 72px 0; }
+      nav           { padding: 0 24px; }
+      footer        { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .calc-stats   { grid-template-columns: 1fr; }
+      .capabilities { grid-template-columns: 1fr; }
+      .domain-grid  { grid-template-columns: repeat(2, 1fr); }
+      .domain-tile.is-elevated { transform: none; }
+      .shift-grid   { grid-template-columns: 1fr; }
+      .shift-arrow-col { display: none; }
+      .engagement-meta { grid-template-columns: 1fr; gap: 24px; }
+      .rumble-tiers { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero-form    { flex-direction: column; }
+      .shift-cta-form { flex-direction: column; }
+      .shift-cta    { padding: 24px; }
+      .choice-grid  { grid-template-columns: 1fr; }
+    }
+
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="wordmark">Augusto</a>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════
+       S1 · HERO
+  ════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="container">
+      <span class="section-label">Sales</span>
+      <p class="hero-diagnose">Your AI chat prompt is just step 1.</p>
+      <h1 class="anchor">Activate the revenue<br>layer your sales team is missing.</h1>
+      <p class="body-text hero-subhead">Because your pipeline number is only as real as the last rep who remembered to update it.</p>
+
+      <div class="hero-actions">
+        <form class="hero-form" onsubmit="return false;">
+          <input type="email" class="hero-email-input" placeholder="Work email" required>
+          <button type="submit" class="btn-hero-primary">Discuss My Reality</button>
+        </form>
+        <a href="#evidence" class="hero-secondary-link">See the data &darr;</a>
+      </div>
+      <p class="hero-trust-line">10 years in business. All work guaranteed.</p>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S2 · DIAGNOSE
+  ════════════════════════════════════════ -->
+  <section id="fragmented-ip" class="bg-light">
+    <div class="container">
+      <span class="section-label">Where you are today</span>
+      <h2 class="anchor-md">Your reps hit their activity numbers every week.<br>Now what?</h2>
+      <p class="body-text">By now, most sales teams have the cadence down: calls made, emails sent, CRM fields filled. That was never really the question.</p>
+
+      <div class="scenario-block">
+        <p class="scenario-text">Say you're the CSO. The board wants next quarter's number by Monday. Half your pipeline is sitting in stages no one's touched in three weeks, and the forecast depends on whichever rep remembered to log their last call.</p>
+      </div>
+
+      <div class="chain" id="diagnoseChain">
+        <div class="chain-sequence">
+          <p class="chain-step">Every forecast starts with the same guesswork: reading stale CRM stages and hoping they still reflect reality.</p>
+          <p class="chain-step">Which means you're not managing a pipeline. You're managing whatever got logged, by whoever remembered to log it.</p>
+          <p class="chain-step">And a forecast built on stale CRM data is already wrong before the board sees it.</p>
+        </div>
+        <div class="chain-conclusion">
+          <p class="chain-step">By the time you find the real number, the deal that was supposed to close already slipped.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S3 · EVIDENCE + CALCULATOR
+  ════════════════════════════════════════ -->
+  <section id="evidence">
+    <div class="container">
+      <span class="section-label">The Evidence</span>
+      <h2 class="anchor-md">Why let CRM admin drain selling capacity?</h2>
+      <p class="body-text">Sales productivity research shows reps at top-quota-attaining organizations (90%+ attainment) spend about 34% of their time actually selling, versus just 23% at lower-performing organizations. The rest goes to CRM data entry, internal meetings, and admin.</p>
+      <p class="slide-cta"><span aria-hidden="true">&darr;</span> Slide to see where your team lands against the benchmark.</p>
+
+      <div class="calc-wrapper">
+        <p class="calc-slider-label">Your team today</p>
+        <div class="calc-header">
+          <span class="calc-employee-display" id="pctCount">25</span>
+          <span class="calc-employee-label">% of time spent actually selling</span>
+        </div>
+        <input type="range" class="calc-slider" id="pctSlider" min="15" max="45" value="25" step="1">
+        <div class="calc-range-labels">
+          <span>15%</span>
+          <span>45%</span>
+        </div>
+        <p class="calc-tier" id="calcTier">Average pace</p>
+
+        <div class="calc-stats">
+          <div class="calc-stat">
+            <p class="calc-stat-number" id="stat1">0</p>
+            <p class="calc-stat-label">Percentage points below top-quota organizations</p>
+          </div>
+          <div class="calc-stat">
+            <p class="calc-stat-number" id="stat2">0</p>
+            <p class="calc-stat-label">Hours per rep, per week, spent on CRM admin instead of selling</p>
+          </div>
+          <div class="calc-stat">
+            <p class="calc-stat-number" id="stat3">0</p>
+            <p class="calc-stat-label">Annual cost of that gap across a typical mid-market sales team</p>
+          </div>
+        </div>
+        <p class="calc-source">Based on sales productivity research: reps at 90%+ quota-attainment organizations spend about 34% of their time actually selling, versus 23% at lower-performing organizations. Cost estimate assumes a 15-person mid-market sales team at $85/hr average fully-loaded cost.</p>
+      </div>
+
+      <p class="body-text">This isn't just about busier reps. Every point below top-quota pace is time spent proving the pipeline is real instead of moving it forward, and that gap is exactly what separates a sales team that reports activity from one that closes revenue.</p>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S4 · THE SHIFT
+  ════════════════════════════════════════ -->
+  <section id="new-context" class="bg-light">
+    <div class="container">
+      <span class="section-label">The Shift</span>
+      <h2 class="anchor-md">More CRM fields won't fix this.<br>The data feeding them will.</h2>
+      <p class="body-text">Here's the shift that actually closes the gap:</p>
+
+      <div class="shift-grid">
+        <div>
+          <p class="shift-col-label">From</p>
+          <div class="shift-item">Pipeline built on manually-updated CRM stages</div>
+          <div class="shift-item">Point tools that log activity faster, not close deals faster</div>
+          <div class="shift-item">Forecast accuracy locked in whichever rep remembered to log it</div>
+        </div>
+        <div class="shift-arrow-col">
+          <span>→</span>
+        </div>
+        <div>
+          <p class="shift-col-label">To</p>
+          <div class="shift-item">Pipeline built on live, verified deal signals</div>
+          <div class="shift-item">Integrated intelligence that flags what's actually moving, not just what's logged</div>
+          <div class="shift-item">Forecast accuracy that holds regardless of who's covering the desk</div>
+        </div>
+      </div>
+
+      <div class="shift-cta">
+        <p class="shift-cta-headline">Which side of this shift are you on?</p>
+        <p class="shift-cta-sub">Share your work email and we'll show you what closing this gap looks like for your sales team.</p>
+        <form class="shift-cta-form" onsubmit="return false;">
+          <input type="email" class="shift-cta-input" placeholder="Work email" required>
+          <button type="submit" class="btn">Discuss My Reality</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S5 · THE REAL QUESTION
+  ════════════════════════════════════════ -->
+  <section id="question">
+    <div class="container">
+      <span class="section-label">The Real Question</span>
+      <h2 class="anchor-md">What's the right path for you?</h2>
+
+      <div class="choice-grid" id="choiceGrid">
+        <button type="button" class="choice-card" data-choice="status-quo">
+          <span class="choice-tag">Path one</span>
+          <span class="choice-text">Keep forecasting on CRM stages nobody trusts.</span>
+          <span class="choice-arrow" aria-hidden="true">&rarr;</span>
+        </button>
+        <button type="button" class="choice-card" data-choice="innovate">
+          <span class="choice-tag">Path two</span>
+          <span class="choice-text">Build the layer that tells you what's actually real.</span>
+          <span class="choice-arrow" aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+
+      <div class="choice-response" id="choiceResponse">
+        <p id="choiceResponseText"></p>
+        <a href="#engagement" class="btn choice-response-cta" id="choiceResponseCta" style="display: none;">Discuss My Reality</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S6 · CREDIBILITY
+  ════════════════════════════════════════ -->
+  <section id="credibility">
+    <div class="container">
+      <span class="section-label">Why Augusto</span>
+      <h2 class="anchor-md">Why Sales Intelligence matters to us.</h2>
+
+      <div class="video-frame">
+        <div class="video-frame-inner">
+          <span class="video-play" aria-hidden="true">&#9658;</span>
+        </div>
+        <p class="video-caption">Video placeholder: CEO talk track on Sales Intelligence, approximately 45 seconds</p>
+      </div>
+
+      <p class="body-text" style="margin-top: 28px; color: #777;">If a past AI effort didn't stick, that's not a reason to wait. It's usually a sign no one diagnosed the right starting point first.</p>
+      <p class="body-text" style="margin-top: 14px; color: #777;">Our edge isn't more automation. It's activating the human advantages AI can't replace. Practically, that means we diagnose before we build, never the other way around.</p>
+      <p class="body-text" style="margin-top: 10px; color: #555; font-style: italic;">Put AI to work for your people.</p>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S7 · ENGAGEMENT
+  ════════════════════════════════════════ -->
+  <section id="engagement" class="bg-light">
+    <div class="container">
+      <span class="section-label">Next Step</span>
+      <h2 class="anchor-md">Start with a Rumble, not a guess.</h2>
+      <p class="body-text">The Rumble is a fixed-price engagement that generates an AI activation roadmap, then tells you whether you need Guidance, Execution, or both.</p>
+
+      <div class="rumble-tiers">
+        <div class="rumble-tier">
+          <p class="rumble-tier-name">Single Core Function</p>
+          <p class="rumble-tier-price">$10,000</p>
+          <p class="rumble-tier-desc">Pinpoint one Intelligence domain and roadmap where to activate AI first.</p>
+        </div>
+        <div class="rumble-tier is-recommended">
+          <p class="rumble-tier-badge">Recommended</p>
+          <p class="rumble-tier-name">Business-Wide Diagnosis</p>
+          <p class="rumble-tier-price">$25,000</p>
+          <p class="rumble-tier-desc">A full cross-functional view, prioritized by impact.</p>
+        </div>
+      </div>
+
+      <p class="body-text" style="margin-bottom: 8px;">Coming out of the Rumble, you'll know exactly which comes next:</p>
+      <div class="engagement-meta">
+        <div class="engagement-meta-item">
+          <p class="engagement-meta-label">Guidance</p>
+          <p class="engagement-meta-value">We provide the architecture and the plan. You build it.</p>
+        </div>
+        <div class="engagement-meta-item">
+          <p class="engagement-meta-label">Execution</p>
+          <p class="engagement-meta-value">We build, maintain and evolve your Intelligence solutions.</p>
+        </div>
+      </div>
+
+      <div class="usecase-card">
+        <p class="usecase-tag">Case Study</p>
+        <p class="usecase-client">[Client Name]</p>
+        <p class="usecase-challenge">[One or two sentence summary of the client's challenge and how Sales Intelligence solved it.]</p>
+      </div>
+
+      <a href="engagement-scope.html" class="btn">Let's Define Your Scope &nbsp;&rarr;</a>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S8 · WHAT SALES INTELLIGENCE DOES (legacy, bumped to bottom, pending keep/cut decision)
+  ════════════════════════════════════════ -->
+  <section id="what-sales-does">
+    <div class="container">
+      <span class="section-label">The Solution</span>
+      <h2 class="anchor-md">Sales Intelligence</h2>
+
+      <div class="def-block">
+        <p>An AI system that turns fragmented pipeline data into a single, structured source of truth: verified, current, and available to every sales function, from prospecting to close. Selling knowledge becomes infrastructure. Modeled. Forecasted. Trusted.</p>
+      </div>
+
+      <div class="capabilities">
+        <div class="capability" tabindex="0">
+          <p class="capability-name">Real-time pipeline signals</p>
+          <div class="capability-flip">
+            <p class="capability-desc">Deal health updates automatically from actual buyer activity and rep behavior, not whatever got typed into a CRM field after the fact.</p>
+            <p class="capability-problem"><span class="capability-problem-tag">The Problem</span>Endless manual stage updates. Countless forecasts built on whatever a rep remembered to log.</p>
+          </div>
+          <span class="capability-hint" aria-hidden="true">Hover &#8644;</span>
+        </div>
+        <div class="capability" tabindex="0">
+          <p class="capability-name">Automated deal-risk flagging</p>
+          <div class="capability-flip">
+            <p class="capability-desc">Stalled deals and at-risk accounts surface on their own, so reps spend their time on the deals that are actually moving.</p>
+            <p class="capability-problem"><span class="capability-problem-tag">The Problem</span>Endless pipeline review meetings. Countless hours spent guessing which deals are real.</p>
+          </div>
+          <span class="capability-hint" aria-hidden="true">Hover &#8644;</span>
+        </div>
+        <div class="capability" tabindex="0">
+          <p class="capability-name">Institutional selling memory</p>
+          <div class="capability-flip">
+            <p class="capability-desc">Every winning play your best rep ever ran stays captured and searchable, so what works keeps working after they leave.</p>
+            <p class="capability-problem"><span class="capability-problem-tag">The Problem</span>Endless selling knowledge lost to turnover. Countless deals lost re-learning what a departed rep already knew.</p>
+          </div>
+          <span class="capability-hint" aria-hidden="true">Hover &#8644;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       S9 · DOMAIN GRID (legacy, bumped to bottom, pending keep/cut decision)
+  ════════════════════════════════════════ -->
+  <section id="eight-domains" class="bg-light">
+    <div class="container">
+      <span class="section-label">Where This Leads</span>
+      <h2 class="anchor-md">Every function you activate compounds this growth.</h2>
+      <p class="body-text" style="margin-bottom: 40px;">The fragmented-data problem on this page isn't unique to Sales. It shows up everywhere else in your business, and costs growth in each one. Explore where AI activation moves you forward next.</p>
+
+      <div class="domain-grid" id="domainGrid">
+        <a href="company-intelligence.html" class="domain-tile" data-domain="company-intelligence">
+          <p class="domain-tile-num">01</p>
+          <p class="domain-tile-name">Company Intelligence</p>
+          <p class="domain-tile-outcome">Activate the knowledge layer your AI is missing.</p>
+        </a>
+        <a href="finance.html" class="domain-tile" data-domain="finance">
+          <p class="domain-tile-num">02</p>
+          <p class="domain-tile-name">Finance</p>
+          <p class="domain-tile-outcome">Activate the forecasting layer your finance team is missing.</p>
+        </a>
+        <a href="sales.html" class="domain-tile is-current" data-domain="sales">
+          <p class="domain-tile-num">03</p>
+          <p class="domain-tile-name">Sales</p>
+          <p class="domain-tile-outcome">Activate the revenue layer your sales team is missing.</p>
+        </a>
+        <a href="marketing.html" class="domain-tile" data-domain="marketing">
+          <p class="domain-tile-num">04</p>
+          <p class="domain-tile-name">Marketing</p>
+          <p class="domain-tile-outcome">Activate the attribution layer your marketing team is missing.</p>
+        </a>
+        <a href="hr.html" class="domain-tile" data-domain="hr">
+          <p class="domain-tile-num">05</p>
+          <p class="domain-tile-name">HR</p>
+          <p class="domain-tile-outcome">Activate the workforce layer your HR team is missing.</p>
+        </a>
+        <a href="operations.html" class="domain-tile" data-domain="operations">
+          <p class="domain-tile-num">06</p>
+          <p class="domain-tile-name">Operations</p>
+          <p class="domain-tile-outcome">Activate the process layer your operations team is missing.</p>
+        </a>
+        <a href="engineering.html" class="domain-tile" data-domain="engineering">
+          <p class="domain-tile-num">07</p>
+          <p class="domain-tile-name">Engineering</p>
+          <p class="domain-tile-outcome">Activate the context layer your engineering team is missing.</p>
+        </a>
+        <a href="it.html" class="domain-tile" data-domain="it">
+          <p class="domain-tile-num">08</p>
+          <p class="domain-tile-name">IT</p>
+          <p class="domain-tile-outcome">Activate the infrastructure layer your IT team is missing.</p>
+        </a>
+        <a href="security.html" class="domain-tile" data-domain="security">
+          <p class="domain-tile-num">09</p>
+          <p class="domain-tile-name">Security</p>
+          <p class="domain-tile-outcome">Activate the posture layer your security team is missing.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════
+       PAGE CLOSE
+  ════════════════════════════════════════ -->
+  <section id="page-close" class="bg-light">
+    <div class="container">
+      <div class="page-close-frame">
+        <p class="page-close-headline">Ready to put AI to work for your people?</p>
+        <a href="#engagement" class="btn">Let's get started!</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p style="margin: 0; font-size: 13px; color: #999;">[Hold for page footer here]</p>
+  </footer>
+
+
+  <script>
+
+    // ─────────────────────────────────────────
+    // CALCULATOR
+    // ─────────────────────────────────────────
+    const slider        = document.getElementById('pctSlider');
+    const displayCount  = document.getElementById('pctCount');
+    const tierEl        = document.getElementById('calcTier');
+    const stat1El       = document.getElementById('stat1');
+    const stat2El       = document.getElementById('stat2');
+    const stat3El       = document.getElementById('stat3');
+
+    function fmt(n) {
+      return n.toLocaleString('en-US');
+    }
+
+    function tierLabel(pct) {
+      if (pct >= 34) return 'Top-quota pace';
+      if (pct >= 23) return 'Average pace';
+      return 'Below-average pace';
+    }
+
+    function calcAndRender() {
+      const pct = parseInt(slider.value, 10);
+      displayCount.textContent = fmt(pct);
+      tierEl.textContent = tierLabel(pct);
+
+      const gapPts       = Math.max(0, 34 - pct);
+      const hoursPerWeek = Math.round((gapPts / 100) * 40);
+      const annualCost   = hoursPerWeek * 15 * 52 * 85; // 15-rep mid-market sales team, $85/hr fully-loaded
+
+      stat1El.textContent = fmt(gapPts);
+      stat2El.textContent = fmt(hoursPerWeek);
+      stat3El.textContent = '$' + fmt(annualCost);
+    }
+
+    slider.addEventListener('input', calcAndRender);
+    calcAndRender(); // initialize on load
+
+
+    // ─────────────────────────────────────────
+    // FORCED CHOICE — Provocative question
+    // ─────────────────────────────────────────
+    const choiceCards = document.querySelectorAll('.choice-card');
+    const choiceResponse = document.getElementById('choiceResponse');
+    const choiceResponseText = document.getElementById('choiceResponseText');
+    const choiceResponseCta = document.getElementById('choiceResponseCta');
+
+    const choiceCopy = {
+      'status-quo': {
+        text: "That's where most sales teams stay. It's also where the cost keeps compounding: deals that slip because the real signal was buried in a stage nobody updated.",
+        showCta: false
+      },
+      'innovate': {
+        text: "That's the shift Sales Intelligence exists to make. Let's talk about what it looks like for your sales team.",
+        showCta: true
+      }
+    };
+
+    choiceCards.forEach(card => {
+      card.addEventListener('click', () => {
+        choiceCards.forEach(c => c.classList.remove('is-active'));
+        card.classList.add('is-active');
+        const choice = choiceCopy[card.dataset.choice];
+        choiceResponseText.textContent = choice.text;
+        choiceResponseCta.style.display = choice.showCta ? 'inline-block' : 'none';
+        choiceResponse.classList.add('show');
+        choiceResponse.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+
+
+    // ─────────────────────────────────────────
+    // CROSS-NAV TILE GRID — current page + hover elevation
+    // ─────────────────────────────────────────
+    const domainGrid = document.getElementById('domainGrid');
+    if (domainGrid) {
+      const tiles = domainGrid.querySelectorAll('.domain-tile');
+      const currentTile = domainGrid.querySelector('.domain-tile.is-current');
+      tiles.forEach(tile => {
+        tile.addEventListener('mouseenter', () => {
+          tiles.forEach(t => t.classList.remove('is-elevated'));
+          tile.classList.add('is-elevated');
+        });
+      });
+      domainGrid.addEventListener('mouseleave', () => {
+        tiles.forEach(t => t.classList.remove('is-elevated'));
+        if (currentTile) currentTile.classList.add('is-elevated');
+      });
+      if (currentTile) currentTile.classList.add('is-elevated');
+    }
+
+
+    // ─────────────────────────────────────────
+    // SCROLL REVEAL — Diagnose chain
+    // ─────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.chain-step');
+    if (revealEls.length && 'IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      revealEls.forEach(el => revealObserver.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+
+  </script>
+
+</body>
+</html>
