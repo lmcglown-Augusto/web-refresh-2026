@@ -766,6 +766,26 @@
     .capability { outline: none; }
     .capability:focus-visible { box-shadow: 0 0 0 2px #111 inset; }
 
+    .capabilities.capabilities-pair {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .capabilities-flow {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .capabilities-flow-arrow {
+      font-size: 22px;
+      color: #ccc;
+      line-height: 1;
+    }
+
+    .capabilities.capabilities-result {
+      grid-template-columns: 1fr;
+    }
+
 
     /* ═══════════════════════════════════════
        SECTION 6 — EIGHT DOMAINS
@@ -1189,6 +1209,7 @@
       footer        { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
       .calc-stats   { grid-template-columns: 1fr; }
       .capabilities { grid-template-columns: 1fr; }
+      .capabilities.capabilities-pair { grid-template-columns: 1fr; }
       .domain-grid  { grid-template-columns: repeat(2, 1fr); }
       .domain-tile.is-elevated { transform: none; }
       .shift-grid   { grid-template-columns: 1fr; }
@@ -1476,7 +1497,7 @@
         <p>An AI system that captures what your company knows and makes it available to every employee, across every function, at every level, on demand. Company knowledge becomes IP. Searchable. Accessible. Permanent.</p>
       </div>
 
-      <div class="capabilities">
+      <div class="capabilities capabilities-pair">
         <div class="capability" tabindex="0">
           <p class="capability-name">Company Brain</p>
           <div class="capability-flip">
@@ -1493,8 +1514,15 @@
           </div>
           <span class="capability-hint" aria-hidden="true">Hover &#8644;</span>
         </div>
+      </div>
+
+      <div class="capabilities-flow" aria-hidden="true">
+        <span class="capabilities-flow-arrow">&darr;</span>
+      </div>
+
+      <div class="capabilities capabilities-result">
         <div class="capability" tabindex="0">
-          <p class="capability-name">Institutional memory</p>
+          <p class="capability-name">The intersection = Company Intelligence</p>
           <div class="capability-flip">
             <p class="capability-desc">When someone leaves, their expertise doesn't. Every decision, process, and hard-won lesson stays searchable and accessible to everyone who needs it next.</p>
             <p class="capability-problem"><span class="capability-problem-tag">The Problem</span>Endless knowledge lost to turnover. Countless decisions made without the full picture.</p>
