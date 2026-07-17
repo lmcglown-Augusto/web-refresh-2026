@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augusto — AI Activation Partner for Mid-Market Companies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --navy:#0E1E2B;
+  --navy-mid:#1A2E3E;
+  --teal:#0989B1;
+  --green:#22B161;
+  --bg:#F8F9FA;
+  --white:#FFFFFF;
+  --text:#0E1E2B;
+  --text-secondary:#4A5C6A;
+  --text-muted:#818B92;
+  --border:rgba(14,30,43,0.08);
+  --border-strong:rgba(14,30,43,0.15);
+  --border-stronger:rgba(14,30,43,0.28);
+  --radius:8px;
+  --font:'Barlow',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --max:1080px;
+}
+
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;text-decoration:none;}
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 40px;
+}
+
+/* ---- NAV ---- */
+.nav{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:60px;
+}
+.nav-logo{
+  font-size:17px;
+  font-weight:600;
+  color:var(--navy);
+  letter-spacing:0.02em;
+}
+.nav-links{
+  display:flex;
+  gap:32px;
+}
+.nav-link{
+  font-size:13px;
+  font-weight:500;
+  color:var(--text-secondary);
+  transition:color 0.15s;
+}
+.nav-link:hover{color:var(--navy);}
+
+/* ---- SHARED ---- */
+.section-eyebrow{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:14px;
+}
+.section-rule{
+  width:32px;
+  height:2px;
+  background:var(--teal);
+  margin-bottom:32px;
+}
+.btn-primary{
+  display:inline-block;
+  padding:12px 24px;
+  background:var(--navy);
+  color:var(--white);
+  font-size:13px;
+  font-weight:600;
+  border-radius:var(--radius);
+  border:none;
+  cursor:pointer;
+  font-family:var(--font);
+  transition:background 0.15s;
+  letter-spacing:0.01em;
+}
+.btn-primary:hover{background:var(--navy-mid);}
+.btn-secondary{
+  display:inline-block;
+  padding:12px 24px;
+  background:transparent;
+  color:var(--text-secondary);
+  font-size:13px;
+  font-weight:500;
+  border-radius:var(--radius);
+  border:1px solid var(--border-strong);
+  cursor:pointer;
+  font-family:var(--font);
+  transition:all 0.15s;
+}
+.btn-secondary:hover{border-color:var(--border-stronger);color:var(--navy);}
+
+/* ---- HERO ---- */
+.hero{
+  background:var(--white);
+  padding:100px 0 72px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.hero-eyebrow-pill{
+  display:inline-block;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  border:1px solid var(--border-strong);
+  border-radius:20px;
+  padding:6px 16px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:52px;
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.1;
+  margin-bottom:36px;
+  letter-spacing:-0.01em;
+}
+.hero-ctas{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-bottom:56px;
+}
+.hero-proof{
+  display:inline-flex;
+  gap:0;
+  border-top:1px solid var(--border);
+  padding-top:28px;
+}
+.proof-item{
+  font-size:12px;
+  color:var(--text-muted);
+  padding:0 28px;
+  border-right:1px solid var(--border);
+  line-height:1.5;
+}
+.proof-item:first-child{padding-left:0;}
+.proof-item:last-child{border-right:none;padding-right:0;}
+.proof-item strong{
+  display:block;
+  font-size:13px;
+  color:var(--text-secondary);
+  font-weight:600;
+  margin-bottom:2px;
+}
+
+/* ---- TRANSITION BAND ---- */
+.transition-band{
+  background:var(--navy);
+  padding:40px 0;
+  text-align:center;
+}
+.transition-band p{
+  font-size:20px;
+  font-weight:400;
+  color:rgba(255,255,255,0.7);
+  font-style:italic;
+  line-height:1.5;
+}
+
+/* ---- PROBLEM ---- */
+.problem{
+  background:var(--white);
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.problem-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:start;
+}
+.cycling-col{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.stmt{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:16px 20px;
+  background:var(--bg);
+  transition:all 0.5s cubic-bezier(0.4,0,0.2,1);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:56px;
+}
+.stmt.active{
+  border-color:var(--border-stronger);
+  background:var(--white);
+  box-shadow:0 1px 6px rgba(14,30,43,0.08);
+  padding:24px 20px;
+  min-height:80px;
+}
+.stmt-text{
+  font-size:13px;
+  color:var(--text-muted);
+  line-height:1.5;
+  transition:all 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.stmt.active .stmt-text{
+  font-size:16px;
+  color:var(--navy);
+  font-weight:500;
+  line-height:1.4;
+}
+.pov-col{padding-top:4px;}
+.pov-block{margin-bottom:28px;}
+.pov-label{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.pov-label::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border-strong);
+}
+.pov-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:9px 0;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.55;
+}
+.pov-item:last-child{border-bottom:none;}
+.pov-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--border-stronger);
+  flex-shrink:0;
+  margin-top:6px;
+}
+
+/* ---- BETTER APPROACH TRANSITION ---- */
+.better-approach{
+  background:var(--bg);
+  padding:72px 0;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.better-approach h2{
+  font-size:32px;
+  font-weight:500;
+  color:var(--navy);
+  line-height:1.3;
+  max-width:500px;
+  margin:0 auto;
+}
+
+/* ---- CATEGORY ARGUMENT ---- */
+.category{
+  background:var(--white);
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.category-title{
+  font-size:13px;
+  font-weight:500;
+  color:var(--text-muted);
+  letter-spacing:0.08em;
+  margin-bottom:8px;
+}
+.category-title span{
+  margin:0 8px;
+  color:var(--border-stronger);
+}
+.category-intro{
+  font-size:15px;
+  color:var(--text-secondary);
+  line-height:1.75;
+  max-width:540px;
+  margin-bottom:40px;
+}
+.category-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+.list-block-label{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.list-block-label::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border-strong);
+}
+.list-row{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.55;
+}
+.list-row:last-child{border-bottom:none;}
+.list-row-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--teal);
+  flex-shrink:0;
+  margin-top:6px;
+}
+
+/* ---- HOW WE WORK ---- */
+.how-we-work{
+  background:var(--bg);
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.positioning-statement{
+  font-size:17px;
+  color:var(--text-secondary);
+  line-height:1.8;
+  max-width:580px;
+  margin-bottom:52px;
+  padding-bottom:48px;
+  border-bottom:1px solid var(--border-strong);
+}
+.positioning-statement strong{
+  color:var(--navy);
+  font-weight:600;
+}
+.steps-header{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.steps-header::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border-strong);
+}
+.step{
+  display:grid;
+  grid-template-columns:52px 1fr;
+  gap:20px;
+  padding:28px 0;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+}
+.step:last-child{border-bottom:none;}
+.step-num{
+  width:40px;
+  height:40px;
+  border:1px solid var(--border-strong);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:600;
+  color:var(--text-muted);
+  flex-shrink:0;
+}
+.step-title{
+  font-size:16px;
+  font-weight:600;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+.step-body{
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.7;
+}
+
+/* ---- SOLUTIONS ---- */
+.solutions{
+  background:var(--white);
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.solutions h2{
+  font-size:28px;
+  font-weight:600;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.solutions-sub{
+  font-size:14px;
+  color:var(--text-muted);
+  margin-bottom:36px;
+}
+.solutions-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:40px;
+}
+.sol-card{
+  display:block;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--bg);
+  transition:border-color 0.15s,background 0.15s;
+  cursor:pointer;
+  text-decoration:none;
+}
+.sol-card:hover{
+  border-color:var(--teal);
+  background:var(--white);
+}
+.sol-name{
+  font-size:13px;
+  font-weight:600;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+.sol-q{
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.55;
+}
+.assessment-gate{
+  padding:36px 40px;
+  border:1px solid var(--border-strong);
+  border-radius:12px;
+  background:var(--bg);
+}
+.ag-eyebrow{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:10px;
+}
+.ag-headline{
+  font-size:20px;
+  font-weight:600;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.ag-sub{
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.7;
+  max-width:500px;
+  margin-bottom:24px;
+}
+.ag-form{
+  display:flex;
+  gap:10px;
+  max-width:480px;
+}
+.ag-input{
+  flex:1;
+  padding:12px 16px;
+  border:1px solid var(--border-strong);
+  border-radius:var(--radius);
+  font-size:13px;
+  font-family:var(--font);
+  color:var(--navy);
+  background:var(--white);
+  outline:none;
+  transition:border-color 0.15s;
+}
+.ag-input:focus{border-color:var(--teal);}
+.ag-input::placeholder{color:var(--text-muted);}
+.ag-btn{
+  padding:12px 20px;
+  background:var(--navy);
+  color:var(--white);
+  font-size:13px;
+  font-weight:600;
+  border:none;
+  border-radius:var(--radius);
+  cursor:pointer;
+  font-family:var(--font);
+  white-space:nowrap;
+  transition:background 0.15s;
+}
+.ag-btn:hover{background:var(--navy-mid);}
+.ag-micro{
+  font-size:11px;
+  color:var(--text-muted);
+  margin-top:10px;
+}
+
+/* ---- ACTIVATION PRODUCES ---- */
+.activation-produces{
+  background:var(--bg);
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.activation-produces h2{
+  font-size:28px;
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.3;
+  max-width:520px;
+  margin-bottom:16px;
+}
+.activation-intro{
+  font-size:14px;
+  color:var(--text-secondary);
+  line-height:1.75;
+  max-width:520px;
+  margin-bottom:40px;
+}
+.outcomes-table{width:100%;border-collapse:collapse;}
+.outcomes-table th{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-align:left;
+  padding:0 16px 14px;
+  border-bottom:1px solid var(--border-stronger);
+}
+.outcomes-table th:first-child{padding-left:0;width:130px;}
+.outcomes-table th:last-child{color:var(--navy);}
+.outcomes-table td{
+  font-size:13px;
+  color:var(--text-secondary);
+  padding:20px 16px;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  vertical-align:top;
+}
+.outcomes-table td:first-child{
+  padding-left:0;
+  font-weight:600;
+  color:var(--text-muted);
+  font-size:12px;
+}
+.outcomes-table td:last-child{color:var(--text-secondary);}
+.outcomes-table td strong{color:var(--navy);font-weight:600;}
+.outcomes-table tr:last-child td{border-bottom:none;}
+
+/* ---- WHY CLIENTS STAY ---- */
+.why-clients-stay{
+  background:var(--white);
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.why-clients-stay h2{
+  font-size:28px;
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.3;
+  max-width:480px;
+  margin-bottom:16px;
+}
+.trust-intro{
+  font-size:15px;
+  color:var(--text-secondary);
+  line-height:1.8;
+  max-width:520px;
+  margin-bottom:40px;
+}
+.trust-stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:40px;
+}
+.trust-stat{
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--bg);
+}
+.ts-num{
+  font-size:26px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+.ts-label{
+  font-size:12px;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+.quote-block{
+  padding:20px 24px;
+  border-left:3px solid var(--teal);
+  background:var(--bg);
+  margin-bottom:14px;
+}
+.quote-notice{
+  font-size:10px;
+  color:var(--text-muted);
+  font-style:normal;
+  margin-bottom:6px;
+  background:rgba(9,137,177,0.06);
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:4px;
+}
+.quote-text{
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.75;
+  font-style:italic;
+  margin-bottom:10px;
+}
+.quote-attr{
+  font-size:11px;
+  color:var(--text-muted);
+  font-weight:600;
+  font-style:normal;
+}
+.guarantee-block{
+  margin-top:32px;
+  padding:24px 28px;
+  border:1px solid var(--border-strong);
+  border-radius:10px;
+  background:var(--bg);
+}
+.guarantee-label{
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:10px;
+}
+.guarantee-text{
+  font-size:14px;
+  color:var(--text-secondary);
+  line-height:1.75;
+}
+.guarantee-text strong{color:var(--navy);font-weight:600;}
+
+/* ---- CONVERSION MODULE ---- */
+.conversion{
+  background:var(--navy);
+  padding:80px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.conversion h2{
+  font-size:36px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:12px;
+  letter-spacing:-0.01em;
+}
+.conversion-sub{
+  font-size:14px;
+  color:rgba(255,255,255,0.6);
+  line-height:1.75;
+  max-width:460px;
+  margin-bottom:36px;
+}
+.conv-form{
+  max-width:480px;
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:10px;
+}
+.form-field{
+  padding:12px 16px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:var(--radius);
+  font-size:13px;
+  font-family:var(--font);
+  color:var(--white);
+  background:rgba(255,255,255,0.07);
+  outline:none;
+  transition:border-color 0.15s;
+}
+.form-field::placeholder{color:rgba(255,255,255,0.35);}
+.form-field:focus{border-color:rgba(9,137,177,0.6);}
+.form-field.full{grid-column:1/-1;}
+.form-select{
+  padding:12px 16px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:var(--radius);
+  font-size:13px;
+  font-family:var(--font);
+  color:rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.07);
+  outline:none;
+  width:100%;
+  margin-bottom:10px;
+  cursor:pointer;
+  appearance:none;
+}
+.form-submit{
+  width:100%;
+  padding:14px;
+  background:var(--teal);
+  color:var(--white);
+  font-size:14px;
+  font-weight:600;
+  border:none;
+  border-radius:var(--radius);
+  cursor:pointer;
+  font-family:var(--font);
+  letter-spacing:0.01em;
+  transition:opacity 0.15s;
+  margin-top:4px;
+}
+.form-submit:hover{opacity:0.88;}
+.form-micro{
+  font-size:11px;
+  color:rgba(255,255,255,0.35);
+  text-align:center;
+  margin-top:12px;
+  line-height:1.6;
+}
+
+/* ---- NAV DROPDOWN ---- */
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{
+  display:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px rgba(14,30,43,0.12);
+  padding:6px 0;
+  min-width:220px;
+  z-index:200;
+}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-dropdown-item{
+  display:block;
+  padding:9px 16px;
+  font-size:13px;
+  color:var(--text-secondary);
+  transition:background 0.1s,color 0.1s;
+  white-space:nowrap;
+}
+.nav-dropdown-item:hover{background:var(--bg);color:var(--navy);}
+
+/* ---- FOOTER ---- */
+.footer{
+  background:var(--navy);
+  padding:56px 0 40px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-inner{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding-bottom:32px;
+  margin-bottom:32px;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.footer-brand{
+  font-size:15px;
+  font-weight:600;
+  color:var(--white);
+  margin-bottom:6px;
+}
+.footer-tagline{
+  font-size:12px;
+  color:rgba(255,255,255,0.35);
+}
+.footer-ctas{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.footer-cta-primary{
+  padding:10px 20px;
+  background:var(--teal);
+  color:var(--white);
+  font-size:12px;
+  font-weight:600;
+  border-radius:var(--radius);
+  border:none;
+  cursor:pointer;
+  font-family:var(--font);
+  transition:opacity 0.15s;
+}
+.footer-cta-primary:hover{opacity:0.85;}
+.footer-cta-secondary{
+  padding:10px 20px;
+  background:transparent;
+  color:rgba(255,255,255,0.5);
+  font-size:12px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,0.15);
+  cursor:pointer;
+  font-family:var(--font);
+  transition:all 0.15s;
+}
+.footer-cta-secondary:hover{color:var(--white);border-color:rgba(255,255,255,0.3);}
+.footer-note{
+  font-size:11px;
+  color:rgba(255,255,255,0.25);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-logo">Augusto</div>
+      <div class="nav-links">
+        <a class="nav-link" href="#">About</a>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="#">Solutions</a>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="company-intelligence.html">Company Intelligence</a>
+            <a class="nav-dropdown-item" href="engineering.html">Engineering Intelligence</a>
+            <a class="nav-dropdown-item" href="finance.html">Finance Intelligence</a>
+            <a class="nav-dropdown-item" href="hr.html">HR Intelligence</a>
+            <a class="nav-dropdown-item" href="it.html">IT Intelligence</a>
+            <a class="nav-dropdown-item" href="marketing.html">Marketing Intelligence</a>
+            <a class="nav-dropdown-item" href="operations.html">Operations Intelligence</a>
+            <a class="nav-dropdown-item" href="sales.html">Revenue Intelligence</a>
+            <a class="nav-dropdown-item" href="security.html">Security Intelligence</a>
+          </div>
+        </div>
+        <a class="nav-link" href="#">Insights</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow-pill">The AI Activation Partner for Mid-Market Companies</div>
+    <h1>Put AI to work for your people.</h1>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="document.querySelector('.conversion').scrollIntoView({behavior:'smooth'})">Start with a Rumble</button>
+      <button class="btn-secondary" onclick="document.querySelector('.how-we-work').scrollIntoView({behavior:'smooth'})">See how it works</button>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-item"><strong>Our first client</strong>is still with us</div>
+      <div class="proof-item"><strong>50%+</strong>repeat clients</div>
+      <div class="proof-item"><strong>Satisfaction</strong>guarantee</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSITION BAND -->
+<div class="transition-band">
+  <div class="container">
+    <p>Is your team absorbing work that AI should carry?</p>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="section-eyebrow">The problem</div>
+    <div class="problem-cols">
+      <div class="cycling-col">
+        <div class="stmt active"><div class="stmt-text">The window to keep pace is closing.</div></div>
+        <div class="stmt"><div class="stmt-text">A deck isn't deployment.</div></div>
+        <div class="stmt"><div class="stmt-text">Consulting recommendations rarely stick.</div></div>
+        <div class="stmt"><div class="stmt-text">Pre-built tools lack relevance.</div></div>
+      </div>
+      <div class="pov-col">
+        <div class="pov-block">
+          <div class="pov-label">You know</div>
+          <div class="pov-item"><span class="pov-dot"></span><span>Your team is skeptical</span></div>
+          <div class="pov-item"><span class="pov-dot"></span><span>How your systems actually work</span></div>
+          <div class="pov-item"><span class="pov-dot"></span><span>How you intend to transform</span></div>
+        </div>
+        <div class="pov-block">
+          <div class="pov-label">You don't need</div>
+          <div class="pov-item"><span class="pov-dot"></span><span>One-off pilots</span></div>
+          <div class="pov-item"><span class="pov-dot"></span><span>Generic recommendations</span></div>
+          <div class="pov-item"><span class="pov-dot"></span><span>Solutions that lack integration</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BETTER APPROACH TRANSITION -->
+<div class="better-approach">
+  <div class="container">
+    <div class="section-eyebrow" style="text-align:center;">A better approach</div>
+    <h2>What if you hired for activation, not advice?</h2>
+  </div>
+</div>
+
+<!-- CATEGORY ARGUMENT -->
+<section class="category">
+  <div class="container">
+    <div class="category-title">AI<span>·</span>Activation<span>·</span>Partner</div>
+    <p class="category-intro">To win, shift from pilots and projects to a business-wide roadmap that activates AI where your people actually work.</p>
+    <div class="category-cols">
+      <div>
+        <div class="list-block-label">What winning looks like</div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Amplifies the context carried by your people</span></div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Transforms how work gets done</span></div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Slows the pace of overhead</span></div>
+      </div>
+      <div>
+        <div class="list-block-label">Signals you've found a reliable partner</div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Starts with a diagnosis</span></div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Builds their recommendations</span></div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Drives internal adoption</span></div>
+        <div class="list-row"><span class="list-row-dot"></span><span>Quantifies the ROI</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-we-work">
+  <div class="container">
+    <div class="section-eyebrow">How we work</div>
+    <p class="positioning-statement">We amplify what your people can achieve by pinpointing where they are spending energy that AI should be carrying. We <strong>build, maintain and power the evolution</strong> of your AI solutions, standing behind every engagement with a <strong>satisfaction guarantee.</strong></p>
+    <div class="steps-header">How to activate a partnership</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">The Rumble</div>
+        <p class="step-body">Structured discovery across core business functions. Produces a prioritized roadmap of AI activation wins we are ready to build.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">The Scale of Win</div>
+        <p class="step-body">Choose your activation scope: Quick Win for fast, focused proof or Comprehensive Win for cross-functional business transformation.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">The Satisfaction Guarantee</div>
+        <p class="step-body">Augusto maintains and evolves your Intelligence solutions over time. We build lasting AI capability, and guarantee our work.</p>
+      </div>
+    </div>
+    <div style="margin-top:36px;">
+      <button class="btn-primary" onclick="document.querySelector('.conversion').scrollIntoView({behavior:'smooth'})">Start with a Rumble</button>
+    </div>
+  </div>
+</section>
+
+<!-- INTELLIGENCE SOLUTIONS -->
+<section class="solutions">
+  <div class="container">
+    <div class="section-eyebrow">Intelligence solutions</div>
+    <h2>Where does your organization need AI most?</h2>
+    <p class="solutions-sub">Nine domains. Each one a diagnostic question.</p>
+    <div class="solutions-grid">
+      <a class="sol-card" href="finance.html">
+        <div class="sol-name">Finance Intelligence</div>
+        <div class="sol-q">Is finance a strategic asset? Or a reporting bottleneck?</div>
+      </a>
+      <a class="sol-card" href="sales.html">
+        <div class="sol-name">Revenue Intelligence</div>
+        <div class="sol-q">Is your revenue team selling? Or drowning in surrounding work?</div>
+      </a>
+      <a class="sol-card" href="marketing.html">
+        <div class="sol-name">Marketing Intelligence</div>
+        <div class="sol-q">Is marketing working? Or are you hoping the numbers show it?</div>
+      </a>
+      <a class="sol-card" href="hr.html">
+        <div class="sol-name">HR Intelligence</div>
+        <div class="sol-q">Is your workforce designed for tomorrow? Or organized around yesterday?</div>
+      </a>
+      <a class="sol-card" href="operations.html">
+        <div class="sol-name">Operations Intelligence</div>
+        <div class="sol-q">Is your operation a competitive advantage? Or a cost you've learned to live with?</div>
+      </a>
+      <a class="sol-card" href="engineering.html">
+        <div class="sol-name">Engineering Intelligence</div>
+        <div class="sol-q">Is your engineering capacity focused on what matters? Or consumed by what already exists?</div>
+      </a>
+      <a class="sol-card" href="company-intelligence.html">
+        <div class="sol-name">Company Intelligence</div>
+        <div class="sol-q">Is your organization's knowledge an asset? Or a risk when people leave?</div>
+      </a>
+      <a class="sol-card" href="it.html">
+        <div class="sol-name">IT Intelligence</div>
+        <div class="sol-q">Is your IT team driving the business forward? Or just keeping up with it?</div>
+      </a>
+      <a class="sol-card" href="security.html">
+        <div class="sol-name">Security Intelligence</div>
+        <div class="sol-q">Is your security posture protecting the business? Or a risk you've accepted?</div>
+      </a>
+    </div>
+    <div class="assessment-gate">
+      <div class="ag-eyebrow">Rumble Readiness Assessment</div>
+      <div class="ag-headline">Not sure where to start?</div>
+      <p class="ag-sub">Get a personalized view of where AI activation will create the most immediate impact in your organization. Takes five minutes. No sales call required.</p>
+      <div class="ag-form">
+        <input class="ag-input" type="email" placeholder="Work email" />
+        <button class="ag-btn">Get your assessment</button>
+      </div>
+      <p class="ag-micro">We'll send your results along with guidance on how to initiate an AI Activation Roadmap.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT ACTIVATION PRODUCES -->
+<section class="activation-produces">
+  <div class="container">
+    <div class="section-eyebrow">What activation produces</div>
+    <h2>What changes when your people stop absorbing work AI should carry.</h2>
+    <p class="activation-intro">Activation isn't a tool added to your stack. It removes the drag on your team, freeing the capacity your people already have for higher-value work.</p>
+    <table class="outcomes-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Before activation</th>
+          <th>After activation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Revenue</td>
+          <td>Team manages CRM overhead, pipeline prep, and reporting manually</td>
+          <td><strong>Team sells.</strong> AI carries the surrounding work.</td>
+        </tr>
+        <tr>
+          <td>Finance</td>
+          <td>Month-end is a sprint. Reporting is reactive. Forecasting is slow.</td>
+          <td><strong>Finance advises.</strong> Routine reporting runs itself.</td>
+        </tr>
+        <tr>
+          <td>Operations</td>
+          <td>Team coordinates around the process instead of improving it</td>
+          <td><strong>Operations leads.</strong> AI handles the coordination layer.</td>
+        </tr>
+        <tr>
+          <td>HR</td>
+          <td>Recruiting, onboarding, and retention workflows are manual and fragmented</td>
+          <td><strong>HR focuses on people.</strong> AI handles the workflow.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- WHY CLIENTS STAY -->
+<section class="why-clients-stay">
+  <div class="container">
+    <div class="section-eyebrow">Why clients stay</div>
+    <h2>Wins compound when AI is built into how your organization actually operates.</h2>
+    <p class="trust-intro">The greatest impact comes not from a single deployment, but from solutions that grow more capable as your people and your organization evolve. We measure our success the same way you do: over time.</p>
+    <div class="trust-stats">
+      <div class="trust-stat">
+        <div class="ts-num">50%+</div>
+        <div class="ts-label">of revenue comes from clients who returned for more work</div>
+      </div>
+      <div class="trust-stat">
+        <div class="ts-num">Day one</div>
+        <div class="ts-label">Our first client is still an active partner today</div>
+      </div>
+    </div>
+    <div class="quote-block">
+      <div class="quote-notice">Verify verbatim wording before publishing</div>
+      <p class="quote-text">"The team built something we'd been trying to get done for two years. They came in, understood how we actually work, and delivered."</p>
+      <div class="quote-attr">CMO, Mentavi Health</div>
+    </div>
+    <div class="quote-block">
+      <div class="quote-notice">Verify verbatim wording before publishing</div>
+      <p class="quote-text">"The Rumble gave us more direction in two weeks than we had gotten in six months."</p>
+      <div class="quote-attr">Founder, Vibe Code</div>
+    </div>
+    <div class="guarantee-block">
+      <div class="guarantee-label">The satisfaction guarantee</div>
+      <p class="guarantee-text">Every quarter, Augusto checks in on results, ROI, and any risks. If it is not working, we fix it. <strong>At no additional cost.</strong></p>
+    </div>
+    <div style="margin-top:28px;">
+      <button class="btn-secondary" onclick="document.querySelector('.conversion').scrollIntoView({behavior:'smooth'})">See what activation looks like in practice</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSION MODULE -->
+<section class="conversion">
+  <div class="container">
+    <h2>Put AI to work for your people.</h2>
+    <p class="conversion-sub">Start with a conversation about where your people are spending energy AI should be carrying. The Rumble produces a prioritized roadmap of activation wins, ready to build.</p>
+    <div class="conv-form">
+      <div class="form-row">
+        <input class="form-field" type="text" placeholder="First name" />
+        <input class="form-field" type="email" placeholder="Business email" />
+      </div>
+      <div class="form-row">
+        <input class="form-field full" type="text" placeholder="Company" />
+      </div>
+      <select class="form-select">
+        <option value="" disabled selected>Where would AI create the most impact?</option>
+        <option>Finance</option>
+        <option>Revenue</option>
+        <option>Marketing</option>
+        <option>HR</option>
+        <option>Operations</option>
+        <option>Engineering</option>
+        <option>Company Knowledge</option>
+        <option>IT</option>
+        <option>Security</option>
+        <option>Not sure yet</option>
+      </select>
+      <button class="form-submit">Start with a Rumble</button>
+      <p class="form-micro">Structured discovery. Defined outputs. No open-ended scope.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Augusto</div>
+        <div class="footer-tagline">AI Activation Partner for Mid-Market Companies</div>
+      </div>
+      <div class="footer-ctas">
+        <button class="footer-cta-primary" onclick="document.querySelector('.conversion').scrollIntoView({behavior:'smooth'})">Start with a Rumble</button>
+        <button class="footer-cta-secondary">See our work</button>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 Augusto &nbsp;·&nbsp; Privacy &nbsp;·&nbsp; Terms</div>
+  </div>
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.stmt');
+let active = 0;
+setInterval(() => {
+  cards[active].classList.remove('active');
+  active = (active + 1) % cards.length;
+  cards[active].classList.add('active');
+}, 2000);
+</script>
+
+</body>
+</html>
