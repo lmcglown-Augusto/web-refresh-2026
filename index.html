@@ -455,12 +455,14 @@ a{color:inherit;text-decoration:none;}
   margin-bottom:40px;
 }
 .sol-card{
+  display:block;
   padding:20px;
   border:1px solid var(--border);
   border-radius:10px;
   background:var(--bg);
   transition:border-color 0.15s,background 0.15s;
   cursor:pointer;
+  text-decoration:none;
 }
 .sol-card:hover{
   border-color:var(--teal);
@@ -771,6 +773,33 @@ a{color:inherit;text-decoration:none;}
   line-height:1.6;
 }
 
+/* ---- NAV DROPDOWN ---- */
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{
+  display:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 8px 24px rgba(14,30,43,0.12);
+  padding:6px 0;
+  min-width:220px;
+  z-index:200;
+}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-dropdown-item{
+  display:block;
+  padding:9px 16px;
+  font-size:13px;
+  color:var(--text-secondary);
+  transition:background 0.1s,color 0.1s;
+  white-space:nowrap;
+}
+.nav-dropdown-item:hover{background:var(--bg);color:var(--navy);}
+
 /* ---- FOOTER ---- */
 .footer{
   background:var(--navy);
@@ -840,7 +869,20 @@ a{color:inherit;text-decoration:none;}
       <div class="nav-logo">Augusto</div>
       <div class="nav-links">
         <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Solutions</a>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="#">Solutions</a>
+          <div class="nav-dropdown-menu">
+            <a class="nav-dropdown-item" href="company-intelligence.html">Company Intelligence</a>
+            <a class="nav-dropdown-item" href="engineering.html">Engineering Intelligence</a>
+            <a class="nav-dropdown-item" href="finance.html">Finance Intelligence</a>
+            <a class="nav-dropdown-item" href="hr.html">HR Intelligence</a>
+            <a class="nav-dropdown-item" href="it.html">IT Intelligence</a>
+            <a class="nav-dropdown-item" href="marketing.html">Marketing Intelligence</a>
+            <a class="nav-dropdown-item" href="operations.html">Operations Intelligence</a>
+            <a class="nav-dropdown-item" href="sales.html">Revenue Intelligence</a>
+            <a class="nav-dropdown-item" href="security.html">Security Intelligence</a>
+          </div>
+        </div>
         <a class="nav-link" href="#">Insights</a>
       </div>
     </div>
@@ -971,42 +1013,42 @@ a{color:inherit;text-decoration:none;}
     <h2>Where does your organization need AI most?</h2>
     <p class="solutions-sub">Nine domains. Each one a diagnostic question.</p>
     <div class="solutions-grid">
-      <div class="sol-card">
+      <a class="sol-card" href="finance.html">
         <div class="sol-name">Finance Intelligence</div>
         <div class="sol-q">Is finance a strategic asset? Or a reporting bottleneck?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="sales.html">
         <div class="sol-name">Revenue Intelligence</div>
         <div class="sol-q">Is your revenue team selling? Or drowning in surrounding work?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="marketing.html">
         <div class="sol-name">Marketing Intelligence</div>
         <div class="sol-q">Is marketing working? Or are you hoping the numbers show it?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="hr.html">
         <div class="sol-name">HR Intelligence</div>
         <div class="sol-q">Is your workforce designed for tomorrow? Or organized around yesterday?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="operations.html">
         <div class="sol-name">Operations Intelligence</div>
         <div class="sol-q">Is your operation a competitive advantage? Or a cost you've learned to live with?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="engineering.html">
         <div class="sol-name">Engineering Intelligence</div>
         <div class="sol-q">Is your engineering capacity focused on what matters? Or consumed by what already exists?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="company-intelligence.html">
         <div class="sol-name">Company Intelligence</div>
         <div class="sol-q">Is your organization's knowledge an asset? Or a risk when people leave?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="it.html">
         <div class="sol-name">IT Intelligence</div>
         <div class="sol-q">Is your IT team driving the business forward? Or just keeping up with it?</div>
-      </div>
-      <div class="sol-card">
+      </a>
+      <a class="sol-card" href="security.html">
         <div class="sol-name">Security Intelligence</div>
         <div class="sol-q">Is your security posture protecting the business? Or a risk you've accepted?</div>
-      </div>
+      </a>
     </div>
     <div class="assessment-gate">
       <div class="ag-eyebrow">Rumble Readiness Assessment</div>
